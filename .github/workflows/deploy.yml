@@ -21,6 +21,6 @@ jobs:
           script: |
             # Здесь выполните команды для клонирования репозитория и запуска вашего скрипта
             git clone git@github.com:BKS01/3wp-install.git
-            cd ~
+            cd 3wp-install/
             sudo chmod 777 3wordpress_install.sh
             ./3wordpress_install.sh  
