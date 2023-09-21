@@ -15,13 +15,12 @@ jobs:
       - name: SSH into VM and run script
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{ secrets.GCLOUD_VM_IP }}  # Ваш IP-адрес Google Cloud VM
-          username: ${{ secrets.GCLOUD_VM_USERNAME }}  # Ваше имя пользователя на VM
-          key: ${{ secrets.SSH_PRIVATE_KEY }}  # Приватный ключ для доступа к VM
+          host: ${{ secrets.GCLOUD_VM_IP }}
+          username: ${{ secrets.GCLOUD_VM_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            # Здесь выполните команды для клонирования репозитория и запуска вашего скрипта
             git clone git@github.com:BKS01/3wp-install.git
             cd 3wp-install/
-            sudo chmod 777 3wordpress_install.sh
-            ./3wordpress_install.sh  
+            chmod +x 3wordpress_install.sh
+            ./3wordpress_install.sh
